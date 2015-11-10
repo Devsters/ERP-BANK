@@ -3,7 +3,7 @@ namespace Bank_DATA.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class FirstMigration : DbMigration
+    public partial class Migration3 : DbMigration
     {
         public override void Up()
         {
@@ -26,14 +26,14 @@ namespace Bank_DATA.Migrations
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        birthDate = c.String(maxLength: 255, storeType: "nvarchar"),
+                        birthDate = c.DateTime(nullable: false, precision: 0),
                         email = c.String(maxLength: 255, storeType: "nvarchar"),
                         lastName = c.String(maxLength: 255, storeType: "nvarchar"),
                         login = c.String(maxLength: 255, storeType: "nvarchar"),
                         name = c.String(maxLength: 255, storeType: "nvarchar"),
                         passWord = c.String(maxLength: 255, storeType: "nvarchar"),
                         phoneNumber = c.String(maxLength: 255, storeType: "nvarchar"),
-                        registrationDate = c.String(maxLength: 255, storeType: "nvarchar"),
+                        registrationDate = c.DateTime(nullable: false, precision: 0),
                     })
                 .PrimaryKey(t => t.id);
             
@@ -44,7 +44,7 @@ namespace Bank_DATA.Migrations
                         id = c.Int(nullable: false),
                         amount = c.Single(nullable: false),
                         date = c.String(maxLength: 255, storeType: "nvarchar"),
-                        effect = c.Boolean(),
+                        effect = c.Boolean(nullable: false),
                         pay_date = c.String(maxLength: 255, storeType: "nvarchar"),
                         rib = c.String(maxLength: 255, storeType: "nvarchar"),
                         time = c.String(maxLength: 255, storeType: "nvarchar"),
@@ -61,7 +61,7 @@ namespace Bank_DATA.Migrations
                         id = c.Int(nullable: false),
                         amount = c.Single(nullable: false),
                         date = c.String(maxLength: 255, storeType: "nvarchar"),
-                        effect = c.Boolean(),
+                        effect = c.Boolean(nullable: false),
                         time = c.String(maxLength: 255, storeType: "nvarchar"),
                         account_id = c.Int(),
                     })
@@ -76,8 +76,8 @@ namespace Bank_DATA.Migrations
                         id = c.Int(nullable: false),
                         amount = c.Single(nullable: false),
                         bic = c.String(maxLength: 255, storeType: "nvarchar"),
-                        date = c.String(maxLength: 255, storeType: "nvarchar"),
-                        effect = c.Boolean(),
+                        date = c.DateTime(nullable: false, precision: 0),
+                        effect = c.Boolean(nullable: false),
                         iban = c.String(maxLength: 255, storeType: "nvarchar"),
                         nameFull = c.String(maxLength: 255, storeType: "nvarchar"),
                         rib = c.String(maxLength: 255, storeType: "nvarchar"),

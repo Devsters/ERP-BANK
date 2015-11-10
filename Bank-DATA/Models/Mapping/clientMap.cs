@@ -12,7 +12,7 @@ namespace Bank_DATA.Models.Mapping
 
             // Properties
             this.Property(t => t.birthDate)
-                .HasMaxLength(255);
+                .HasColumnType("datetime");
 
             this.Property(t => t.email)
                 .HasMaxLength(255);
@@ -33,7 +33,7 @@ namespace Bank_DATA.Models.Mapping
                 .HasMaxLength(255);
 
             this.Property(t => t.registrationDate)
-                .HasMaxLength(255);
+                .HasColumnType("datetime");
 
             // Table & Column Mappings
             this.ToTable("client", "bank");

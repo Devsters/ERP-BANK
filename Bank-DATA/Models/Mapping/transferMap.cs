@@ -18,7 +18,7 @@ namespace Bank_DATA.Models.Mapping
                 .HasMaxLength(255);
 
             this.Property(t => t.date)
-                .HasMaxLength(255);
+                .HasColumnType("datetime");
 
             this.Property(t => t.iban)
                 .HasMaxLength(255);
