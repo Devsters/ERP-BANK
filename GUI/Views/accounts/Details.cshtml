@@ -1,0 +1,50 @@
+﻿@model Bank_DATA.Models.account
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.client.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.client.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.accountType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.accountType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.balance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.opnedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.opnedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
